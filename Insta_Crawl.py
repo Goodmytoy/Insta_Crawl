@@ -300,7 +300,10 @@ class Insta_Element_Extractor(Insta_Selenium):
     
     def __init__(self):
         super().__init__()
-        
+
+
+    def init(self):
+        super().__init__()
     
     def extract_nickname_elements(self):
         self.driver.get(self.BASE_URL1)
@@ -401,6 +404,9 @@ class Insta_Tag_Feed_Crawler(Insta_Selenium):
     def __init__(self, insta_elements):
         super().__init__()
         self.insta_elements = insta_elements
+
+    def init(self):
+        super().__init__()        
         
     def search_tag(self, tag):
         # 검색
@@ -442,7 +448,7 @@ class Insta_Tag_Feed_Crawler(Insta_Selenium):
             self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
             
             # 10초 대기, 페이지 로딩 대기
-            time.sleep(2)
+            time.sleep(1)
             
             # 새로운 페이지 높이를 확인하여 스크롤이 끝났는지 체크
             new_height = self.driver.execute_script("return document.body.scrollHeight")
